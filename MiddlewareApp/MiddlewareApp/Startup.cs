@@ -1,13 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace MiddlewareApp
 {
@@ -24,32 +21,48 @@ namespace MiddlewareApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddTransient<ConsoleLoggerMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.Use(async (context, next) =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
+                Console.WriteLine("Use Before");
+                await next();
+                Console.WriteLine("Use After");
+            });
+
+            app.UseMiddleware<ConsoleLoggerMiddleware>();
+
+            app.Map("/map", MapHandler);
+
+            //app.MapWhen(context => context.Request.Query.ContainsKey("q"), HandleRequestWithQuery);
+            app.UseWhen(context => context.Request.Query.ContainsKey("q"), HandleRequestWithQuery);
+
+            app.Run(async context =>
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+                Console.WriteLine("Run Hello world");
+                string message = "Hello world";
+                byte[] data = Encoding.UTF8.GetBytes(message);
+                await context.Response.Body.WriteAsync(data);
+            });
+        }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+        private void HandleRequestWithQuery(IApplicationBuilder app)
+        {
+            app.Run(async context => Console.WriteLine("Contains query") );
+        }
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+        private async void MapHandler(IApplicationBuilder app)
+        {
+            app.Run(async context =>
             {
-                endpoints.MapRazorPages();
+                Console.WriteLine("MapHandler");
+                string message = "Hello from Map method";
+                byte[] data = Encoding.UTF8.GetBytes(message);
+                await context.Response.Body.WriteAsync(data);
             });
         }
     }
