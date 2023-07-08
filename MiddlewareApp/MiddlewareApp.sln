@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareApp", "MiddlewareApp\MiddlewareApp.csproj", "{9D94E993-D1E1-4B6B-BF67-7072506694E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareWebApi", "MiddlewareWebApi\MiddlewareWebApi.csproj", "{A4981E43-1037-45A9-BADF-639986597A2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9D94E993-D1E1-4B6B-BF67-7072506694E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D94E993-D1E1-4B6B-BF67-7072506694E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D94E993-D1E1-4B6B-BF67-7072506694E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4981E43-1037-45A9-BADF-639986597A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4981E43-1037-45A9-BADF-639986597A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4981E43-1037-45A9-BADF-639986597A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4981E43-1037-45A9-BADF-639986597A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
