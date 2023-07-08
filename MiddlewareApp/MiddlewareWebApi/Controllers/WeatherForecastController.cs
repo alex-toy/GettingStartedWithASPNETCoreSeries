@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MiddlewareWebApi.Controllers
 {
@@ -11,30 +9,41 @@ namespace MiddlewareWebApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly DependencyService _dependencyService;
+        private readonly DependencyServiceBis _dependencyServiceBis;
+        private readonly IEnumerable<IOperationSingletonInstance> _operationSingletonInstances;
+        private readonly Counter _counter;
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(DependencyService dependencyService,
+                                         DependencyServiceBis dependencyServiceBis,
+                                         IEnumerable<IOperationSingletonInstance> operationSingletonInstance,
+                                         Counter counter)
         {
-            _logger = logger;
+            _dependencyService = dependencyService;
+            _dependencyServiceBis = dependencyServiceBis;
+            _operationSingletonInstances = operationSingletonInstance;
+            _counter = counter;
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            _logger.LogInformation("hello from WeatherForecast");
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            foreach (var operation in _operationSingletonInstances)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Console.WriteLine($"{operation.OperationId}");
+            }
+
+            return Enumerable.Empty<WeatherForecast>();
         }
+
+        //[HttpGet]
+        //public IEnumerable<WeatherForecast> Get()
+        //{
+        //    Console.WriteLine($"Call {_counter.Count}");
+        //    _dependencyService.Write();
+        //    _dependencyServiceBis.Write();
+
+        //    return Enumerable.Empty<WeatherForecast>();
+        //}
     }
 }

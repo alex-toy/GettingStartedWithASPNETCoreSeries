@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -27,10 +28,20 @@ namespace MiddlewareWebApi
         {
             services.AddControllers();
 
+            services.AddSingleton<Counter, Counter>();
+
             services.AddTransient<IOperationTransient, Operation>();
             services.AddScoped<IOperationScoped, Operation>();
             services.AddSingleton<IOperationSingleton, Operation>();
-            services.AddSingleton<IOperationSingletonInstance>(a => new Operation() { OperationId = Guid.Empty });
+
+            services.AddSingleton<IOperationSingletonInstance>(a => new Operation(Guid.Empty));
+            services.AddSingleton<IOperationSingletonInstance>(a => new Operation(Guid.NewGuid()));
+            services.TryAddSingleton<IOperationSingletonInstance>(a => new Operation(Guid.NewGuid()));
+
+
+            services.AddTransient<DependencyService, DependencyService>();
+            services.AddTransient<DependencyServiceBis, DependencyServiceBis>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

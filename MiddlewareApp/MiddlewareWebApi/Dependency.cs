@@ -25,7 +25,26 @@ namespace MiddlewareWebApi
 
     public class Operation : IOperationTransient, IOperationScoped, IOperationSingleton, IOperationSingletonInstance
     {
-        public Guid OperationId { get => OperationId; set => new Guid(); }
+        private Guid operationId;
+
+        public Operation()
+        {
+            operationId = Guid.NewGuid();
+        }
+
+        public Operation(Guid guid)
+        {
+            if (guid == Guid.Empty)
+            {
+                operationId = Guid.NewGuid();
+            }
+            else
+            {
+                operationId = guid;
+            }
+        }
+
+        public Guid OperationId { get => operationId; set => operationId = Guid.NewGuid(); }
     }
 }
     
