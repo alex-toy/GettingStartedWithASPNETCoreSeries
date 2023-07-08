@@ -16,6 +16,10 @@ In this project, we will use the default Dependency Injection container shipped 
 
 ## CONFIGURATION in ASP.NET Core
 
- The .NET Framework, through configuration files, gives developers and administrators control and flexibility over the way applications run. Developers can put settings in configuration files, eliminating the need to recompile an application every time a setting changes. Configuration in ASP NET is performed using one or more configuration providers. Configuration providers read configuration data from key-values using a variety of config sources. 
+ The .NET Framework, through configuration files, gives developers and administrators control and flexibility over the way applications run. Developers can put settings in configuration files, eliminating the need to recompile an application every time a setting changes. Configuration in ASP NET is performed using one or more configuration providers. Configuration providers read configuration data from key-values using a variety of config sources. In this project, we will configure values in ASP NET Core, read it in your application, set up default configuration providers and write customer configuration providers.
 
-In this project, let's take a deep dive into how to configure values in ASP NET Core, read it in your application, how the default configuration providers are set up and how to write customer configuration providers.
+### Secret Manager
+```
+dotnet user-secrets init --project <project_name>
+dotnet user-secrets set "myAPI:apiKeyTopSecret" "Top secret API Key" --project <project_name>
+```
