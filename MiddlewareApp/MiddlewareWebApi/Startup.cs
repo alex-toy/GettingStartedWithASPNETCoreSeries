@@ -15,7 +15,7 @@ namespace MiddlewareWebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IWebHostEnvironment hostWebEnvironment, ILogger logger)
+        public Startup(IConfiguration configuration, IWebHostEnvironment hostWebEnvironment)
         {
             Configuration = configuration;
         }
@@ -26,6 +26,11 @@ namespace MiddlewareWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddTransient<IOperationTransient, Operation>();
+            services.AddScoped<IOperationScoped, Operation>();
+            services.AddSingleton<IOperationSingleton, Operation>();
+            services.AddSingleton<IOperationSingletonInstance>(a => new Operation() { OperationId = Guid.Empty });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
