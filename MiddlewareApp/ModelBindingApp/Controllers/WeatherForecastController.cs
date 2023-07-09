@@ -34,7 +34,7 @@ namespace ModelBindingApp.Controllers
         }
 
         [HttpGet("complex")]
-        public string Get([FromQuery]MyComplexType complexType)
+        public string Get([FromQuery] MyComplexType complexType)
         {
             string parameters = $"Id : {complexType.Id} - Language : {complexType.Language} - IsBool : {complexType.IsBool}";
 
@@ -44,6 +44,29 @@ namespace ModelBindingApp.Controllers
             {
                 parameters += $" mark {mark.ToString()}";
             }
+
+            return parameters;
+        }
+
+        [HttpGet("complexbis")]
+        public string GetComplex([FromQuery] MyComplexType complexType)
+        {
+            string parameters = $"Id : {complexType.Id} - Language : {complexType.Language} - IsBool : {complexType.IsBool}";
+
+            if (complexType.Actions == null) return parameters;
+
+            foreach (var action in complexType.Actions)
+            {
+                parameters += $" action {action.Key}={action.Value}";
+            }
+
+            return parameters;
+        }
+
+        [HttpPost("data")]
+        public string PostData(MyCustomData myCustomData)
+        {
+            string parameters = $"Id : {myCustomData.Id} - Language : {myCustomData.Name}";
 
             return parameters;
         }

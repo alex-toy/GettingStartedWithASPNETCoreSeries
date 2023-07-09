@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace ModelBindingApp
 {
@@ -14,5 +15,7 @@ namespace ModelBindingApp
         public bool IsBool { get; set; }
 
         public int[] Marks { get; set; }
+
+        public Dictionary<string,int> Actions { get; set; }
     }
 }

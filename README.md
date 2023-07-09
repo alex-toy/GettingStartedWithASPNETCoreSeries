@@ -43,3 +43,12 @@ Routing is responsible for matching incoming HTTP requests and dispatching those
 ## Model Binding in ASP.NET Core
 
 Route data may provide a record key, and posted form fields may provide values for the properties of the model. Writing code to retrieve each of these values and convert them from strings to .NET types would be tedious and error-prone. Model binding automates this. In this project, we will study Model Binding in ASP NET Core, how it works, and how to customize it to meet our needs. We will walk through how to bind primitive types, complex types, how to bind data from the request body (JSON and XML formats).
+
+### Install Packages
+```
+Microsoft.AspNetCore.Mvc.Formatters.Xml
+```
+- send json data
+<img src="/pictures/data.png" title="json data"  width="900">
+- send xml data
+<img src="/pictures/data2.png" title="json data"  width="900">
