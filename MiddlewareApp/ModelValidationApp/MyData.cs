@@ -5,6 +5,7 @@ namespace ModelValidationApp
     public class MyData
     {
         [Required]
+        [CustomName("R")]
         public string Name { get; set; }
 
         [Required]

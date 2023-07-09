@@ -67,3 +67,9 @@ Validating user input is an important part of application development. ASP NET C
 
 - unvalid data
 <img src="/pictures/validation2.png" title="validate data"  width="900">
+
+- custom validation data
+<img src="/pictures/validation3.png" title="validate data"  width="900">
+
+- custom validation data using *IValidatableObject*
+<img src="/pictures/validation4.png" title="validate data"  width="900">

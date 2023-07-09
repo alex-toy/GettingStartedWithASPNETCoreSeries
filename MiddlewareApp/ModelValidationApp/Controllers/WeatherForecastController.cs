@@ -43,5 +43,11 @@ namespace ModelValidationApp.Controllers
         {
             return $"Name : {myData.Name} - Age : {myData.Age} - Email : {myData.Email} - Phone : {myData.Phone}";
         }
+
+        [HttpPost("myobject")]
+        public ActionResult<string> MyObjectPost([FromBody] MyObject myObject)
+        {
+            return $"Name : {myObject.Name} - Age : {myObject.Age} - Email : {myObject.Email} - Phone : {myObject.Phone}";
+        }
     }
 }
