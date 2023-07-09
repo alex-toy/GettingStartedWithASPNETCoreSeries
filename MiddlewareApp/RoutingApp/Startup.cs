@@ -1,13 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace RoutingApp
 {
@@ -23,7 +19,12 @@ namespace RoutingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRouting(options =>
+            {
+                options.ConstraintMap.Add("myCustom", typeof(MyCustomConstraint));
+            });
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,16 +41,39 @@ namespace RoutingApp
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.Use(async (context, next) =>
+            {
+                var method = context.Request.Method;
+                await next();
+            });
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.Body.WriteAsync(Encoding.ASCII.GetBytes($"hello world"));
+                });
+
+                endpoints.MapGet("/hello/alex", async context =>
+                {
+                    await context.Response.Body.WriteAsync(Encoding.ASCII.GetBytes($"hello alex specific"));
+                });
+
+                endpoints.MapGet("/hello/{name:alpha:minlength(2)?}", async context =>
+                {
+                    string name = context.Request.RouteValues["name"].ToString();
+                    await context.Response.Body.WriteAsync(Encoding.ASCII.GetBytes($"hello {name}"));
+                });
+
+                endpoints.MapGet("/custom/{name:myCustom}", async context =>
+                {
+                    string name = context.Request.RouteValues["name"].ToString();
+                    await context.Response.Body.WriteAsync(Encoding.ASCII.GetBytes($"hello {name}"));
+                });
+
+                endpoints.MapControllers();
             });
         }
     }
