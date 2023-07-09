@@ -6,6 +6,7 @@ namespace ModelBindingApp.Controllers
     [ApiController]
     [Route("[controller]")]
     [BindProperties(SupportsGet = true)]
+    [Consumes("application/xml", "application/json")]
     public class WeatherForecastController : ControllerBase
     {
         //[BindProperty(SupportsGet=true)]

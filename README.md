@@ -52,3 +52,8 @@ Microsoft.AspNetCore.Mvc.Formatters.Xml
 <img src="/pictures/data.png" title="json data"  width="900">
 - send xml data
 <img src="/pictures/data2.png" title="json data"  width="900">
+
+
+## Model Validation in ASP.NET Core
+
+Validating user input is an important part of application development. ASP NET Core provides some built-in mechanisms for validating user input. In this project, we will see how to validate user input for Web API Controllers. This is also applicable to Razor Pages app. We will use ModelState, data annotation attributes, create custom attributes, and also add class level validations for model classes.
