@@ -38,3 +38,8 @@ Seq.Extensions.Logging
 ## Routing in ASP.NET Core
 
 Routing is responsible for matching incoming HTTP requests and dispatching those requests to the app's executable endpoints. Endpoints are units of executable code that handles requests coming to the application. Endpoints are defined and configured when the app starts. In this project, we will learn about the basics of routing and how it builds over the middleware pipeline in ASP NET Core. We will see how to define endpoints, how URLs are formed and routed. We will also see the route templates and how to add constraints to routes. We will also see how some of these core concepts translate to API Controllers and how to use them there as well.
+
+
+## Model Binding in ASP.NET Core
+
+Route data may provide a record key, and posted form fields may provide values for the properties of the model. Writing code to retrieve each of these values and convert them from strings to .NET types would be tedious and error-prone. Model binding automates this. In this project, we will study Model Binding in ASP NET Core, how it works, and how to customize it to meet our needs. We will walk through how to bind primitive types, complex types, how to bind data from the request body (JSON and XML formats).
