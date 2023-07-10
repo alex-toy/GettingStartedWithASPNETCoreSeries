@@ -1,3 +1,4 @@
+using ExceptionHandling.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,8 @@ namespace ExceptionHandlingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IWeatherService, WeatherService>();
+            services.AddTransient<ExceptionHandlingMiddleware>();
             services.AddControllers();
         }
 
@@ -39,6 +42,8 @@ namespace ExceptionHandlingApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             app.UseAuthorization();
 

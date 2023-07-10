@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterApp", "FilterApp\Filt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApp", "ExceptionHandlingApp\ExceptionHandlingApp.csproj", "{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.Domain", "ExceptionHandling.Domain\ExceptionHandling.Domain.csproj", "{4C6279F1-F1ED-45DB-B061-96444CB9408F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6279F1-F1ED-45DB-B061-96444CB9408F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6279F1-F1ED-45DB-B061-96444CB9408F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6279F1-F1ED-45DB-B061-96444CB9408F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6279F1-F1ED-45DB-B061-96444CB9408F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

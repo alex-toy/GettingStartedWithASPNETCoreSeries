@@ -1,6 +1,6 @@
 using System;
 
-namespace ExceptionHandlingApp
+namespace ExceptionHandling.Domain.Models
 {
     public class WeatherForecast
     {
