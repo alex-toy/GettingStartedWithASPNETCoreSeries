@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoutingApp", "RoutingApp\Ro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelBindingApp", "ModelBindingApp\ModelBindingApp.csproj", "{158E7161-CC0A-458E-9019-12452637A3C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelValidationApp", "ModelValidationApp\ModelValidationApp.csproj", "{87548740-9493-4266-95D5-AF6DF3F336BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelValidationApp", "ModelValidationApp\ModelValidationApp.csproj", "{87548740-9493-4266-95D5-AF6DF3F336BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterApp", "FilterApp\FilterApp.csproj", "{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{87548740-9493-4266-95D5-AF6DF3F336BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87548740-9493-4266-95D5-AF6DF3F336BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87548740-9493-4266-95D5-AF6DF3F336BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

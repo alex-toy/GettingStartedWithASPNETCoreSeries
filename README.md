@@ -73,3 +73,8 @@ Validating user input is an important part of application development. ASP NET C
 
 - custom validation data using *IValidatableObject*
 <img src="/pictures/validation4.png" title="validate data"  width="900">
+
+
+## Model Validation in ASP.NET Core
+
+Filters in ASP.NET Core allow code to be run before or after specific stages in the request processing pipeline. There are built-in filters like Authorization and Response Caching. You can also write Custom Filters to handle cross-cutting concerns like error handling, caching, configuration, authorization, logging, etc. Filters avoid duplicating code and consolidating functionality into a single place. In this project, we will study Filters in ASP NET Core, how they work, how to set it in the request pipeline by creating custom filters. We will study Synchronous and Asynchronous Filters and how they work. We will also study the different scopes that filters can be applied and how the ordering of it works.
