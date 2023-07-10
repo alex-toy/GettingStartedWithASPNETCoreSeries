@@ -9,6 +9,7 @@ namespace FilterApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [MySampleActionFilter("controller")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

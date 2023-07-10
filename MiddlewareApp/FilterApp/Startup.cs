@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace FilterApp
 {
@@ -18,9 +19,16 @@ namespace FilterApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Filter API", Version = "v1" });
+            });
+
             services.AddControllers(options =>
             {
-                options.Filters.Add(new MySampleActionFilter());
+                options.Filters.Add(new MySampleActionFilterAttribute("Global", 2));
             });
         }
 
@@ -30,6 +38,8 @@ namespace FilterApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "filters V1") );
             }
 
             app.UseHttpsRedirection();
