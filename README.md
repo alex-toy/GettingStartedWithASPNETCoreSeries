@@ -83,3 +83,8 @@ Filters in ASP.NET Core allow code to be run before or after specific stages in 
 ## Error Handling in ASP.NET Core
 
 Exception handling or error handling is an important aspect of building applications. However much we want our applications to work fine, there will always be some unexpected cases. It's important that we handle these scenarios and return back appropriate messages. This is no different when building our APIs. In this project, we will study exception handling in ASP NET Core Applications and the different ways we can handle them. We will also see how to set up global error handling and the required middleware for that.
+
+
+## Layering in ASP.NET Core
+
+As applications grow in complexity one way to manage that is to break it up according to various responsibilities or concerns. Following this Separation of concerns principle, helps organize the codebase. It organizes code into different layers, and you might be familiar with this pattern by the name of  N-tier, N-Layer, or Layered architecture in general. In this project, we will explore a simple scenario of such an example, why this happens, and what we are doing wrong. We will then see a guiding principle, the Dependency Inversion Principle, a golden rule that you can follow when separating your code into different layers, folders, or applications. The core design principles of Dependency Inversion and Ownership inversion guide you in managing the dependency flow. It also serves as a guide to organize code into different projects.
