@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 
-namespace FilterApp
+namespace FilterApp.Filters
 {
     public class MySampleActionFilterAttribute : Attribute, IActionFilter, IOrderedFilter
     {
@@ -17,12 +17,12 @@ namespace FilterApp
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            System.Console.WriteLine($"OnActionExecuted {_name} - order : {Order}");
+            Console.WriteLine($"OnActionExecuted {_name} - order : {Order}");
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            System.Console.WriteLine($"OnActionExecuting {_name} - order : {Order}");
+            Console.WriteLine($"OnActionExecuting {_name} - order : {Order}");
         }
     }
 }

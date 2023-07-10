@@ -1,3 +1,4 @@
+using FilterApp.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,9 +27,14 @@ namespace FilterApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Filter API", Version = "v1" });
             });
 
+            services.AddTransient<ResultFilterAttribute>();
+
             services.AddControllers(options =>
             {
-                options.Filters.Add(new MySampleActionFilterAttribute("Global", 2));
+                options.Filters.Add(new MySampleActionFilterAttribute("Global Action Filter", 2));
+                options.Filters.Add(new ResourceFilterAttribute("Global Resource Filter", 2));
+
+                options.Filters.AddService<ResultFilterAttribute>();
             });
         }
 

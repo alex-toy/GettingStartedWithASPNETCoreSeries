@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FilterApp.Filters;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace FilterApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [MySampleActionFilter("controller")]
+    [MySampleActionFilter("WeatherForecastController")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

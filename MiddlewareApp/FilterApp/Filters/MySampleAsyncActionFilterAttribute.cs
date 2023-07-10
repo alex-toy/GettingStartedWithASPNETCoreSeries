@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace FilterApp
+namespace FilterApp.Filters
 {
     public class MySampleAsyncActionFilterAttribute : Attribute, IAsyncActionFilter
     {
@@ -15,9 +15,9 @@ namespace FilterApp
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            System.Console.WriteLine($"Before async execution {_name}");
+            Console.WriteLine($"Before async execution {_name}");
             await next();
-            System.Console.WriteLine($"After async execution {_name}");
+            Console.WriteLine($"After async execution {_name}");
         }
     }
 }

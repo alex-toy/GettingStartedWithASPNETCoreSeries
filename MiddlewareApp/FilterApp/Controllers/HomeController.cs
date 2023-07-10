@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FilterApp.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FilterApp.Controllers
 {
