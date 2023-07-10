@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelValidationApp", "Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterApp", "FilterApp\FilterApp.csproj", "{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApp", "ExceptionHandlingApp\ExceptionHandlingApp.csproj", "{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
