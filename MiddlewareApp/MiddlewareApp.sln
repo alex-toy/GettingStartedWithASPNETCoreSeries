@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.BLL", "WeatherAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.DAL", "WeatherApp.DAL\WeatherApp.DAL.csproj", "{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaApp", "SpaApp\SpaApp.csproj", "{1E1790C1-2CE8-4005-AF11-C934EBDBA65C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1790C1-2CE8-4005-AF11-C934EBDBA65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1790C1-2CE8-4005-AF11-C934EBDBA65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1790C1-2CE8-4005-AF11-C934EBDBA65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1790C1-2CE8-4005-AF11-C934EBDBA65C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

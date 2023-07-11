@@ -8,7 +8,7 @@ namespace WeatherApp.DAL.DTOs
     {
         public DateTime Date { get; set; }
 
-        public int TemperatureC { get; set; }
+        public int TemperatureCelsius { get; set; }
 
         public string Summary { get; set; }
     }

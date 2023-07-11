@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using WeatherApp.BLL.Models;
-using WeatherApp.DAL;
-using WeatherApp.DAL.DTOs;
+using WeatherApp.BLL.Repos;
 
 namespace WeatherApp.BLL.Services
 {
@@ -18,20 +15,7 @@ namespace WeatherApp.BLL.Services
 
         public IEnumerable<WeatherForecast> Get(string city, int NbOfDays)
         {
-            IEnumerable<WeatherForecastDto> weatherForecastDtos = _weatherDataRepo.Get(city, NbOfDays);
-            IEnumerable<WeatherForecast> forecasts = Mapper(weatherForecastDtos);
-            return forecasts;
-        }
-
-        private static IEnumerable<WeatherForecast> Mapper(IEnumerable<WeatherForecastDto> weatherForecastDtos)
-        {
-            IEnumerable<WeatherForecast> forecasts = weatherForecastDtos.Select(f => new WeatherForecast()
-            {
-                Date = f.Date,
-                Summary = f.Summary,
-                TemperatureC = f.TemperatureC
-            });
-
+            IEnumerable<WeatherForecast> forecasts = _weatherDataRepo.Get(city, NbOfDays);
             return forecasts;
         }
     }
