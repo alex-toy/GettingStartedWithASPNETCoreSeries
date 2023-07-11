@@ -1,6 +1,6 @@
 using System;
 
-namespace LayeringApp
+namespace WeatherApp.BLL.Models
 {
     public class WeatherForecast
     {

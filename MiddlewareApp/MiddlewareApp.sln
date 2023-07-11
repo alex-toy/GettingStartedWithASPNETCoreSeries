@@ -17,13 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelBindingApp", "ModelBin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelValidationApp", "ModelValidationApp\ModelValidationApp.csproj", "{87548740-9493-4266-95D5-AF6DF3F336BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterApp", "FilterApp\FilterApp.csproj", "{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilterApp", "FilterApp\FilterApp.csproj", "{29FAAE70-BC47-4FC3-9769-B66F44F3BC6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandlingApp", "ExceptionHandlingApp\ExceptionHandlingApp.csproj", "{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandlingApp", "ExceptionHandlingApp\ExceptionHandlingApp.csproj", "{E034D7B6-01B3-46D2-BF86-C3C4DE97F19F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling.Domain", "ExceptionHandling.Domain\ExceptionHandling.Domain.csproj", "{4C6279F1-F1ED-45DB-B061-96444CB9408F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionHandling.Domain", "ExceptionHandling.Domain\ExceptionHandling.Domain.csproj", "{4C6279F1-F1ED-45DB-B061-96444CB9408F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayeringApp", "LayeringApp\LayeringApp.csproj", "{790D29EB-BC6D-4DD1-B6D6-361FBC3D9D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LayeringApp", "LayeringApp\LayeringApp.csproj", "{790D29EB-BC6D-4DD1-B6D6-361FBC3D9D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.BLL", "WeatherApp.BLL\WeatherApp.BLL.csproj", "{C81CDA7A-A186-4734-B452-691BE67368F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp.DAL", "WeatherApp.DAL\WeatherApp.DAL.csproj", "{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{790D29EB-BC6D-4DD1-B6D6-361FBC3D9D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{790D29EB-BC6D-4DD1-B6D6-361FBC3D9D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{790D29EB-BC6D-4DD1-B6D6-361FBC3D9D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81CDA7A-A186-4734-B452-691BE67368F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81CDA7A-A186-4734-B452-691BE67368F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81CDA7A-A186-4734-B452-691BE67368F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81CDA7A-A186-4734-B452-691BE67368F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF77B8F-5AED-4DE5-918B-F2FF1C406794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
